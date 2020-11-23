@@ -37,14 +37,14 @@ function galleryClick(e) {
 
   if (e.target.nodeName === 'IMG') { //проверка,если равен.  
     refs.lightbox.classList.add('is-open');// добавляю на div.lightbox CSS-класс is-open
-    refs.lightbox__image.src = e.target.getAttribute('data-source');
+    refs.lightbox__image.src = e.target.getAttribute('data-source');//original-картинка
     refs.lightbox__image.alt = e.target.alt;
   };
   window.addEventListener('keyup', clickKey);
 };
 
-function onClickHandlerClose(e) {
-  e.preventDefault(); 
+function onClickHandlerClose() {
+//e.preventDefault(); 
   refs.lightbox.classList.remove('is-open');// снимает, если уже есть 
   refs.lightbox__image.src = '';
   refs.lightbox__image.alt = '';
